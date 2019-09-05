@@ -111,12 +111,26 @@ def get_nba_schedule(url,team,season):
 #        return link_df_1
     else:
         log_error(raw_html)
-    export = input("would you like to export this file?")  #export process
-        
-    if 'y' in export:
-        link_df_1.to_csv('C:\\Users\\AUy\\Downloads\\{c_list[1]}_{c_list[2]}.csv')
+    print(link_df_1)    
 
-    
+    decision = ['y','n']
+
+    while True:
+        export = input("would you like to export this file? Y/N - ")  #export process
+
+        
+        if export in decision[0]:
+            link_df_1.to_csv(f'C:\\Users\\AUy\\Downloads\\{c_list[1]}_{c_list[2]}.csv')
+            print(f'saved to filepath C:\\Users\\AUy\\Downloads\\ as "{c_list[1]}_{c_list[2]}.csv"')
+            return
+        elif export in decision[1]:    
+            print('file not saved')
+            return
+            break
+        else:
+            print('Value not recognized. Please try again.')
+            export = None
+   
 if __name__ == "__main__":
     site = 'www.basketball-reference.com'
     team = str(input('Enter team name:'))

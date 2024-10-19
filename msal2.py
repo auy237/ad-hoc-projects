@@ -1,17 +1,3 @@
-# -*- coding: utf-8 -*-
-###
-### Created on Tue Jul 23 10:34:10 2019
-
-### @author: AUy
-###
-
-# -*- coding: utf-8 -*-
-###
-### Created on Wed Jun 26 09:49:41 2019
-
-### @author: AUy
-###
-
 from requests import get
 from requests.exceptions import RequestException
 from contextlib import closing
